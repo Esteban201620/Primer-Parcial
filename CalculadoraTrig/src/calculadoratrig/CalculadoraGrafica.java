@@ -10,7 +10,7 @@ package calculadoratrig;
  * @author estudiantes
  */
 public class CalculadoraGrafica extends javax.swing.JFrame {
-    Calculador miCalculador=new Calculador
+    Calculador miCalculador=new Calculador();
     /**
      * Creates new form CalculadoraGrafica
      */
@@ -37,6 +37,12 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
         ButtonMult = new javax.swing.JButton();
         ButtonDiv = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        Seno = new javax.swing.JButton();
+        Coseno = new javax.swing.JButton();
+        Tangente = new javax.swing.JButton();
+        Secante = new javax.swing.JButton();
+        Cosecante = new javax.swing.JButton();
+        Cotangente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +80,48 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
 
         jLabel3.setText("Resultado");
 
+        Seno.setText("Sen");
+        Seno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SenoMouseClicked(evt);
+            }
+        });
+
+        Coseno.setText("Cos");
+        Coseno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CosenoMouseClicked(evt);
+            }
+        });
+
+        Tangente.setText("Tan");
+        Tangente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TangenteMouseClicked(evt);
+            }
+        });
+
+        Secante.setText("Sec");
+        Secante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SecanteMouseClicked(evt);
+            }
+        });
+
+        Cosecante.setText("Cosc");
+        Cosecante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CosecanteMouseClicked(evt);
+            }
+        });
+
+        Cotangente.setText("Cot");
+        Cotangente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CotangenteMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,58 +129,87 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(ButtonSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Numero2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                .addComponent(Numero1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ButtonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(ButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                                .addComponent(ButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(21, 21, 21)
+                        .addComponent(ButtonSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Result, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                        .addGap(186, 186, 186)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(Result, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Seno)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Numero2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Numero1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ButtonResta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(ButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Secante)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(Cosecante))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Coseno)
+                                                .addGap(58, 58, 58)
+                                                .addComponent(Tangente)))))
+                                .addGap(56, 56, 56)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Cotangente))))))
+                .addGap(55, 70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Numero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Numero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(Numero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonMult)
+                    .addComponent(jLabel2)
+                    .addComponent(Numero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonSuma)
                     .addComponent(ButtonResta)
-                    .addComponent(ButtonDiv)
-                    .addComponent(ButtonSuma))
-                .addGap(26, 26, 26)
+                    .addComponent(ButtonMult)
+                    .addComponent(ButtonDiv))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Coseno)
+                            .addComponent(Tangente)
+                            .addComponent(Seno)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(Cotangente)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cosecante)
+                    .addComponent(Secante))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Result, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(7, 7, 7))
         );
 
         pack();
@@ -140,44 +217,78 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
 
     private void ButtonSumaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonSumaMouseClicked
         // TODO add your handling code here:
-        /*texto = Numero1.getText();
-        graficaCalculadora.numero1 = Double.parseDouble(texto);
-        texto = Numero2.getText();
-        graficaCalculadora.numero2 = Double.parseDouble(texto);
-        texto = Double.toString(graficaCalculadora.suma());
-        Result.setText(texto);
-        */
+        miCalculador.Operacion="+";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        miCalculador.Num2= Double.parseDouble(Numero2.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+ 
     }//GEN-LAST:event_ButtonSumaMouseClicked
 
     private void ButtonRestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRestaMouseClicked
         // TODO add your handling code here:
-        texto = Numero1.getText();
-        graficaCalculadora.numero1 = Double.parseDouble(texto);
-        texto = Numero2.getText();
-        graficaCalculadora.numero2 = Double.parseDouble(texto);
-        texto = Double.toString(graficaCalculadora.resta());
-        Result.setText(texto);
+        miCalculador.Operacion="-";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        miCalculador.Num2= Double.parseDouble(Numero2.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
     }//GEN-LAST:event_ButtonRestaMouseClicked
 
     private void ButtonMultMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonMultMouseClicked
         // TODO add your handling code here:
-        texto = Numero1.getText();
-        graficaCalculadora.numero1 = Double.parseDouble(texto);
-        texto = Numero2.getText();
-        graficaCalculadora.numero2 = Double.parseDouble(texto);
-        texto = Double.toString(graficaCalculadora.multiplicacion());
-        Result.setText(texto);
+       miCalculador.Operacion="*";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        miCalculador.Num2= Double.parseDouble(Numero2.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
     }//GEN-LAST:event_ButtonMultMouseClicked
 
     private void ButtonDivMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDivMouseClicked
         // TODO add your handling code here:
-        texto = Numero1.getText();
-        graficaCalculadora.numero1 = Double.parseDouble(texto);
-        texto = Numero2.getText();
-        graficaCalculadora.numero2 = Double.parseDouble(texto);
-        texto = Double.toString(graficaCalculadora.division());
-        Result.setText(texto);
+        miCalculador.Operacion="/";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        miCalculador.Num2= Double.parseDouble(Numero2.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
     }//GEN-LAST:event_ButtonDivMouseClicked
+
+    private void SenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SenoMouseClicked
+        miCalculador.Operacion="Sen";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+// TODO add your handling code here:
+    }//GEN-LAST:event_SenoMouseClicked
+
+    private void CosenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CosenoMouseClicked
+
+        miCalculador.Operacion="Cos";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));        // TODO add your handling code here:
+    }//GEN-LAST:event_CosenoMouseClicked
+
+    private void TangenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TangenteMouseClicked
+        miCalculador.Operacion="Tan";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TangenteMouseClicked
+
+    private void CotangenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CotangenteMouseClicked
+        miCalculador.Operacion="Cot";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CotangenteMouseClicked
+
+    private void SecanteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SecanteMouseClicked
+        miCalculador.Operacion="Sec";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SecanteMouseClicked
+
+    private void CosecanteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CosecanteMouseClicked
+        miCalculador.Operacion="Cosc";
+        miCalculador.Num1= Double.parseDouble(Numero1.getText());
+        Result.setText(Double.toString(miCalculador.CalcularOperacion()));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CosecanteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -219,9 +330,15 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
     private javax.swing.JButton ButtonMult;
     private javax.swing.JButton ButtonResta;
     private javax.swing.JButton ButtonSuma;
+    private javax.swing.JButton Cosecante;
+    private javax.swing.JButton Coseno;
+    private javax.swing.JButton Cotangente;
     private javax.swing.JTextField Numero1;
     private javax.swing.JTextField Numero2;
     private javax.swing.JTextField Result;
+    private javax.swing.JButton Secante;
+    private javax.swing.JButton Seno;
+    private javax.swing.JButton Tangente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

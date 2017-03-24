@@ -12,39 +12,55 @@ package calculadoratrig;
 public class Calculador {
     double Num1;
     double Num2;
-    int resultado;
+    double resultado;
     String Operacion;
     
-    public double CalcularOperacion(){
+    public double CalcularOperacion(/*String Operacion, double Num1,  double Num2*/){
         if (Operacion=="+"){
-        return Num1+Num2;
+        resultado=Num1+Num2;
+            return resultado;
     }
         if (Operacion=="-"){
-            return Num1+Num2;
+            resultado=Num1-Num2;
+            return resultado;
         }
         if (Operacion=="*"){
-            return Num1*Num2;
+            resultado=Num1*Num2;
+            return resultado;
         }
         if (Operacion=="/" && Num2!=0){
-            return Num1/Num2;
+            resultado=Num1/Num2;
+            return resultado;
         }
         if (Operacion=="Sen"){
-            return //Num1+Num2;
+            resultado=Math.sin(Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
         if (Operacion=="Cos"){
-            return //Num1+Num2;
+            resultado=Math.cos(Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
         if (Operacion=="Tan"){
-            return //Num1+Num2;
+            resultado=Math.tan(Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
-        if (Operacion=="Cotan"){
-            return //Num1+Num2;
+        if (Operacion=="Cot"){
+            resultado=Math.tan(1/Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
         if (Operacion=="Sec"){
-            return //Num1+Num2;
+            resultado=Math.cos(1/Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
-        if (Operacion=="Cosec"){
-            return //Num1+Num2;
+        if (Operacion=="Cosc"){
+            resultado=Math.sin(1/Num1);
+            resultado=Math.toRadians(resultado);
+            return resultado;
         }
     return 0;
 }

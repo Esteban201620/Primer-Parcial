@@ -16,6 +16,8 @@ public class CalculadoraTrig {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        CalculadoraGrafica miGrafica = new CalculadoraGrafica();
+        miGrafica.setVisible(true);
     }
     
 }
